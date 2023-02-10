@@ -4,13 +4,15 @@ class Header extends React.Component {
   render() {
     return (
       <>
-        <header className={"top"}>
+        <header className="top">
           <h1>Catch of the Day</h1>
+          <h3 className="tagline">
+            <span>Fresh Daily</span>
+          </h3>
         </header>
-        <h3 className={"tagline"}>
-          <span>Fresh Daily</span>
-        </h3>
       </>
     );
   }
 }
+
+export default Header;
