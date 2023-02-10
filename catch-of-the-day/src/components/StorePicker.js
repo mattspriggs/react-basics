@@ -2,7 +2,12 @@ import React from "react";
 
 class StorePicker extends React.Component {
 	render() {
-		return <p>I am the store picker!</p>
+		// return React.createElement('p',{className: 'hey'}, 'Heyoooo') this is NON JSX
+		return (
+			<form className="store-selector">
+				<h2>Please Enter A Store</h2>
+			</form>
+		)
 	}
 }
 
