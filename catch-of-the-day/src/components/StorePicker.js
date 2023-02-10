@@ -10,9 +10,11 @@ class StorePicker extends React.Component {
 		// )
 		return (//The <> </> is the equivalent of <React.Fragment> </React.Fragment>
 			<>
-				<p>Fish!</p>
 				<form className="store-selector">
+					{/* comment in JSX and has to be this way when inside the returned element that is in JSX*/}
 					<h2>Please Enter A Store</h2>
+					<input type={"text"} required placeholder={"Store Name"}/>
+					<button type={"submit"}>Visit Store ➡️</button>
 				</form>
 			</>
 		)
