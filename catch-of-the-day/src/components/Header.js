@@ -14,6 +14,7 @@ class Header extends React.Component {
             Day
           </h1>
           <h3 className="tagline">
+            {/*The this. below refers to the instance of the Header component*/}
             <span>{this.props.tagline}</span>
           </h3>
         </header>

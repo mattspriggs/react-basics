@@ -11,7 +11,7 @@ class App extends React.Component {
           <div className="menu">
             {/*The below component is being passed data within it's tag, such as tagline, that allows for the
              information to be dynamic*/}
-            <Header tagline={"Fresh Seafood Market"} age={500} />
+            <Header tagline={"Fresh Seafood Market"} />
           </div>
           <Order />
           <Inventory />
