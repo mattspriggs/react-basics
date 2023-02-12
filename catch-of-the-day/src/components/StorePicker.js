@@ -2,10 +2,19 @@ import React from "react";
 import { getFunName } from "../helpers";
 
 class StorePicker extends React.Component {
-  goToStore(event) {
+  // constructor() {
+  //   super();
+  //   this.goToStore = this.goToStore.bind(this);
+  // }
+  myInput = React.createRef();
+
+  goToStore = (event) => {
     event.preventDefault();
-    console.log("Going to store....");
-  }
+    //Get text from input
+    console.log(this);
+
+    //change the page to /store/whatever was entered
+  };
   render() {
     // return React.createElement('p',{className: 'hey'}, 'Heyoooo') this is NON JSX
     // return (//cannot return children
@@ -22,6 +31,7 @@ class StorePicker extends React.Component {
           <input
             type={"text"}
             required
+            ref={this.myInput}
             placeholder={"Store Name"}
             defaultValue={getFunName()}
           />
