@@ -3,7 +3,7 @@ import Header from "./Header";
 import Order from "./Order";
 import Inventory from "./Inventory";
 import sampleFishes from "../sample-fishes";
-
+import Fish from "./Fish";
 class App extends React.Component {
   state = {
     fishes: {},
@@ -30,6 +30,11 @@ class App extends React.Component {
           {/*The below component is being passed data within it's tag, such as tagline, that allows for the
              information to be dynamic*/}
           <Header tagline={"Fresh Seafood Market"} />
+          <ul className="fishes">
+            {Object.keys(this.state.fishes).map((key) => (
+              <p>{key}</p>
+            ))}
+          </ul>
         </div>
         <Order />
         <Inventory addFish={this.addFish} loadSamples={this.loadSampleFishes} />
