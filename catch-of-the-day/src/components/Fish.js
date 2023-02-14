@@ -5,7 +5,8 @@ class Fish extends React.Component {
   render() {
     // const image = this.props.details.image;
     // const name = this.props.details.name;
-    const { image, name, price, description, status } = this.props.details;
+    const { image, name, price, desc, status } = this.props.details;
+    const isAvailable = status === "available";
 
     return (
       <>
@@ -15,6 +16,10 @@ class Fish extends React.Component {
             {name}
             <span className="price">{formatPrice(price)}</span>
           </h3>
+          <p>{desc}</p>
+          <button disabled={!isAvailable}>
+            {isAvailable ? "Add to Cart" : "Sold Out!"}
+          </button>
         </li>
       </>
     );

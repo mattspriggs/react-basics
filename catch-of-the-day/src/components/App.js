@@ -23,6 +23,16 @@ class App extends React.Component {
   loadSampleFishes = () => {
     this.setState({ fishes: sampleFishes });
   };
+
+  addToOrder = (key) => {
+    //take a copy of state
+    const order = { ...this.state.order };
+    //Either add to the order or update to our order
+    order[key] = order[key] + 1 || 1;
+    //call setState to update the state object
+    // this.setState({order:order});
+    this.setState({ order });
+  };
   render() {
     return (
       <div className="catch-of-the-day">
