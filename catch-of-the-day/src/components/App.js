@@ -51,7 +51,8 @@ class App extends React.Component {
             ))}
           </ul>
         </div>
-        <Order />
+        {/*Could use {...this.state} to spread and pass the entire state to a component*/}
+        <Order fishes={this.state.fishes} order={this.state.order} />
         <Inventory addFish={this.addFish} loadSamples={this.loadSampleFishes} />
       </div>
     );
