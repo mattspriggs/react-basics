@@ -80,7 +80,11 @@ class App extends React.Component {
         </div>
         {/*Could use {...this.state} to spread and pass the entire state to a component*/}
         <Order fishes={this.state.fishes} order={this.state.order} />
-        <Inventory addFish={this.addFish} loadSamples={this.loadSampleFishes} />
+        <Inventory
+          addFish={this.addFish}
+          loadSamples={this.loadSampleFishes}
+          fishes={this.state.fishes}
+        />
       </div>
     );
   }
