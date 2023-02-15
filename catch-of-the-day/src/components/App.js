@@ -12,6 +12,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
+    console.log(this.props.match);
     const { params } = this.props.match;
     this.ref = base.syncState(`${params.storeId}/fishes`, {
       context: this,
@@ -25,7 +26,7 @@ class App extends React.Component {
 
   componentDidUpdate() {
     console.log(this.state.order);
-    localStorage.setItem(this.props.match.params.storeID, this.state.order);
+    localStorage.setItem(this.props.match.params.storeId, this.state.order);
   }
 
   addFish = (fish) => {
