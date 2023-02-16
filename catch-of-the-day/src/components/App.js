@@ -78,6 +78,15 @@ class App extends React.Component {
     // this.setState({order:order});
     this.setState({ order });
   };
+
+  removeFromOrder = (key) => {
+    //make a copy of state
+    const order = { ...this.state.order };
+    //update the state
+    delete order[key];
+    //update state
+    this.setState({ order });
+  };
   render() {
     return (
       <div className="catch-of-the-day">
@@ -97,7 +106,11 @@ class App extends React.Component {
           </ul>
         </div>
         {/*Could use {...this.state} to spread and pass the entire state to a component*/}
-        <Order fishes={this.state.fishes} order={this.state.order} />
+        <Order
+          fishes={this.state.fishes}
+          order={this.state.order}
+          removeFromOrder={this.removeFromOrder}
+        />
         <Inventory
           addFish={this.addFish}
           updateFish={this.updateFish}
