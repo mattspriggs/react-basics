@@ -7,7 +7,9 @@ class EditFishForm extends React.Component {
     //Make a copy of the current fish
     const updatedFish = {
       ...this.props.fish,
-      name: event.currentTarget.value,
+      //Below is the computed name function which takes the name attribute of the input and inserts the target
+      // name to correspond with the input name to attach the change
+      [event.currentTarget.name]: event.currentTarget.value,
     };
     console.log(updatedFish);
   };
