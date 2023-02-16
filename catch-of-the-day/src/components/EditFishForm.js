@@ -10,7 +10,7 @@ class EditFishForm extends React.Component {
       // name to correspond with the input name to attach the change
       [event.currentTarget.name]: event.currentTarget.value,
     };
-    this.props.updatedFish(this.props.index, updatedFish);
+    this.props.updateFish(this.props.index, updatedFish);
   };
   render() {
     return (
