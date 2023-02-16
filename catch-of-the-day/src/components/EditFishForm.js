@@ -2,7 +2,6 @@ import React from "react";
 
 class EditFishForm extends React.Component {
   handleChange = (event) => {
-    console.log(event.currentTarget.value);
     //Update fish
     //Make a copy of the current fish
     const updatedFish = {
@@ -11,7 +10,7 @@ class EditFishForm extends React.Component {
       // name to correspond with the input name to attach the change
       [event.currentTarget.name]: event.currentTarget.value,
     };
-    console.log(updatedFish);
+    this.props.updatedFish(this.props.index, updatedFish);
   };
   render() {
     return (
