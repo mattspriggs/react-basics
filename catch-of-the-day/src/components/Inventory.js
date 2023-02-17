@@ -13,6 +13,11 @@ class Inventory extends React.Component {
     loadSampleFishes: PropTypes.func,
   };
 
+  state = {
+    uid: null,
+    owner: null,
+  };
+
   authHandler = async (authData) => {
     //lookup the current store in the firebase DB
     const store = await base.fetch(this.props.storeId, { context: this });
@@ -25,8 +30,10 @@ class Inventory extends React.Component {
       });
     }
     //set the state of the inventory component to reflect the current user
-
-    console.log(authData);
+    this.setState({
+      uid: authData.user.uid,
+      owner: store.owner || authData.uid,
+    });
   };
 
   authenticate = (provider) => {
@@ -34,7 +41,11 @@ class Inventory extends React.Component {
     firebaseApp.auth().signInWithPopup(authProvider).then(this.authHandler);
   };
   render() {
-    return <Login authenticate={this.authenticate} />;
+    //checked to see if logged in
+    if (!this.state.uid) {
+      return <Login authenticate={this.authenticate} />;
+    }
+
     return (
       <>
         <div className="inventory">
