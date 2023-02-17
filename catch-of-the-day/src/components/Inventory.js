@@ -18,6 +18,14 @@ class Inventory extends React.Component {
     owner: null,
   };
 
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.authHandler({ user });
+      }
+    });
+  }
+
   authHandler = async (authData) => {
     //lookup the current store in the firebase DB
     const store = await base.fetch(this.props.storeId, { context: this });
