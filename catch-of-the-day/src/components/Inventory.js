@@ -2,6 +2,7 @@ import React from "react";
 import AddFishForm from "./AddFishForm";
 import EditFishForm from "./EditFishForm";
 class Inventory extends React.Component {
+  static propTypes = {};
   render() {
     return (
       <>
