@@ -8,7 +8,11 @@ class Order extends React.Component {
     order: PropTypes.object,
     removeFromOrder: PropTypes.func,
   };
+
   renderOrder = (key) => {
+    const priceStyle = {
+      textAlign: "end",
+    };
     const fish = this.props.fishes[key];
     const count = this.props.order[key];
     const isAvailable = fish && fish.status === "available";
@@ -41,8 +45,8 @@ class Order extends React.Component {
                 <span>{count}</span>
               </CSSTransition>
             </TransitionGroup>
-            lbs {fish.name}
-            {formatPrice(count * fish.price)}
+            lbs {fish.name}{" "}
+            <span style={priceStyle}>{formatPrice(count * fish.price)}</span>
             <button onClick={() => this.props.removeFromOrder(key)}>
               &times;
             </button>
