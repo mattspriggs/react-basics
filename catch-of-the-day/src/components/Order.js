@@ -10,15 +10,12 @@ class Order extends React.Component {
   };
 
   renderOrder = (key) => {
-    const priceStyle = {
-      textAlign: "end",
-    };
     const fish = this.props.fishes[key];
     const count = this.props.order[key];
     const isAvailable = fish && fish.status === "available";
     const transitionOptions = {
       classNames: "order",
-      key: key, //can also be just key
+      key: key, //can also be just key in ES6
       timeout: { enter: 500, exit: 500 },
     };
     //Make sure the fish is loaded prior to rendering
@@ -46,7 +43,9 @@ class Order extends React.Component {
               </CSSTransition>
             </TransitionGroup>
             lbs {fish.name}{" "}
-            <span style={priceStyle}>{formatPrice(count * fish.price)}</span>
+            <span className="priceStyle">
+              {formatPrice(count * fish.price)}
+            </span>
             <button onClick={() => this.props.removeFromOrder(key)}>
               &times;
             </button>

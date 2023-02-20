@@ -34,6 +34,10 @@
 .count-exit.count-exit-active {
   transform: translateY(-100%);
 }
+
+.priceStyle{
+
+}
 @font-face {
   font-family: "haymakerregular";
   src: url("./fonts/haymaker-webfont.eot");
